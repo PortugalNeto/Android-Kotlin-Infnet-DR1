@@ -10,14 +10,14 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        var idade = findViewById<TextView>(R.id.lblIdadePerfil).toString()
-        idade = intent.getStringExtra(idade).toString()
+        var lblIdadePerfil = findViewById<TextView>(R.id.lblIdadePerfil)
+        lblIdadePerfil.text = intent.getStringExtra("idade").toString().plus(" anos")
 
-        var nome = findViewById<TextView>(R.id.lblNomePerfil).toString()
-        nome = intent.getStringExtra(nome).toString()
+        var lblNomePerfil = findViewById<TextView>(R.id.lblNomePerfil)
+        lblNomePerfil.text = intent.getStringExtra("nome").toString()
 
-        var cidade = findViewById<TextView>(R.id.lblCidadePerfil).toString()
-        cidade = intent.getStringExtra(cidade).toString()
+        var lblCidadePerfil = findViewById<TextView>(R.id.lblCidadePerfil)
+        lblCidadePerfil.text = intent.getStringExtra("cidade").toString()
 
     }
 }

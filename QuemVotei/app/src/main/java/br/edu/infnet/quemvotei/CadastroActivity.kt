@@ -13,9 +13,9 @@ class CadastroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
 
-        var idade = findViewById<TextView>(R.id.lblIdade).toString()
+        var lblIdade = findViewById<TextView>(R.id.lblIdade)
 
-        idade = intent.getStringExtra(idade).toString().plus(" anos")
+        lblIdade.text = intent.getStringExtra("idade").toString().plus(" anos")
 
         val btnCadastrar = findViewById<Button>(R.id.btnCadastrar)
 
@@ -23,7 +23,7 @@ class CadastroActivity : AppCompatActivity() {
 
             val nome = findViewById<TextView>(R.id.edtNome).toString()
             val cidade = findViewById<TextView>(R.id.edtCidade).toString()
-
+            val idade = lblIdade.text.toString()
             val profileIntent = Intent(this,
                 ProfileActivity::class.java)
             profileIntent.putExtra("nome", nome)
